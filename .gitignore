@@ -138,3 +138,4 @@ Settings.json
 *.jpg
 *.jpeg
 messages.pot
+venv_microblog
