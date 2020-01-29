@@ -1,0 +1,26 @@
+import os
+
+basedir = os.path.abspath(os.path.dirname(__file__))
+
+
+class Config():
+    # Подробно прочитать про настройки sqlalchemy можно по ссылке ниже
+    # https://flask-sqlalchemy.palletsprojects.com/en/2.x/config/
+
+    SECRET_KEY = ваш секретный ключ приложения
+
+    SQLALCHEMY_DATABASE_URI = путь к вашей базе данных
+
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+    POST_PER_PAGE = колличество постов на страничке
+
+    LANGUAGES = языки, которые поддерживает приложение # например ['en', 'ru']
+
+    MAIL_SERVER = 'smtp.googlemail.com'
+    MAIL_PORT = 587
+    MAIL_USE_TLS = 1
+    MAIL_USERNAME = ваша gmail почта
+    MAIL_PASSWORD = пароль от почты
+
+    YA_TRANSLATOR_KEY = ваш ключ от api Яндекс переводчика
