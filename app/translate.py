@@ -1,16 +1,16 @@
 import requests
-from flask_babel import _
 
-from app import e_app
+from flask_babel import _
+from flask import current_app
 
 
 def translate(text, source_lang, dest_lang):
-    if 'YA_TRANSLATOR_KEY' not in e_app.config or \
-            not e_app.config['YA_TRANSLATOR_KEY']:
+    if 'YA_TRANSLATOR_KEY' not in current_app.config or \
+            not current_app.config['YA_TRANSLATOR_KEY']:
         return _('Error: the translation service is not configured.')
 
     payload = {
-        'key': e_app.config['YA_TRANSLATOR_KEY'],
+        'key': current_app.config['YA_TRANSLATOR_KEY'],
         'text': text,
         'lang': f'{source_lang}-{dest_lang}'
     }
